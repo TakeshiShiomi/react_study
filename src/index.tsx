@@ -1,19 +1,33 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {createRoot} from 'react-dom/client';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+import { App } from './App';
+import { PropsPractice } from './PropsPractice';
+import { PropsPractice2 } from './PropsPractice2';
+import { ChildrenPractice } from './ChildrenPractice';
+
+const rootElement = document.getElementById('root');
+if (!rootElement) {
+  throw new Error("Root element not found");
+}
+
+const root = createRoot(rootElement);
 root.render(
-  <React.StrictMode>
+  <>
     <App />
-  </React.StrictMode>
-);
+    {/* 
+    propsとは、コンポーネントに渡す引数のこと
+    コンポーネントタグの中に属性として値を渡すことで、コンポーネントに値を渡すことができる
+    */}
+    <PropsPractice colorName='blue' text='青です' />
+    <PropsPractice colorName='green' text='緑です' />
+    <PropsPractice2 colorName='red' text='赤です' />
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    {/* 
+    childrenはReactの組み込みプロパティで、コンポーネントの開始タグと終了タグの間に配置された要素を表します。
+     */}
+    <ChildrenPractice colorName='pink'>
+      子供です(子の色が変わる)
+    </ChildrenPractice>
+  </>
+);
