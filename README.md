@@ -1,3 +1,9 @@
+# 概要
+
+- コンポーネントの使い方
+- props と分割代入
+- children
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

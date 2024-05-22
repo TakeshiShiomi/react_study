@@ -6,12 +6,10 @@ interface AppProps {
   name?: string;
 }
 
-
 // () => {}：これはアロー関数を定義する構文。()内には関数の引数を、{}内には関数の本体を記述します
 // 他のファイルでも使えるようにするためにexportする
 // AppProps型を引数に取るApp関数を定義
 export const App: React.FC<AppProps> = () => {
-
   // ボタンがクリックされたときの処理
   const onClickButton = () => {
     alert('ボタンがクリックされました');
