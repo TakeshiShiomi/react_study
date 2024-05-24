@@ -3,7 +3,6 @@ import { useState } from 'react';
 import './App.css';
 
 interface UseStatePracticeProps {
-  name?: string;
 }
 
 export const UseStatePractice: React.FC<UseStatePracticeProps> = () => {
@@ -24,6 +23,10 @@ export const UseStatePractice: React.FC<UseStatePracticeProps> = () => {
     setText(e.target.value);
   };
 
+  // 画面をリロードしているわけでもないのに数値が変わって表示されるのは、
+  // コンポーネントの再レンダリングが行われているため
+  // このコンポーネントが再レンダリングされるたびに(カウントアップする度や文字を入力する度に)、このコンソールログが表示される
+  console.log('レンダリング')
 
   return (
     <>

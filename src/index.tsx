@@ -6,6 +6,8 @@ import { PropsPractice } from './PropsPractice';
 import { PropsPractice2 } from './PropsPractice2';
 import { ChildrenPractice } from './ChildrenPractice';
 import { UseStatePractice } from './UseStatePractice';
+import { UseEffectPractice } from './UseEffectPractice';
+
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -32,5 +34,6 @@ root.render(
     </ChildrenPractice>
 
     <UseStatePractice />
+    <UseEffectPractice />
   </>
 );
