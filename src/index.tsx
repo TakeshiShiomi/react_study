@@ -5,6 +5,7 @@ import { App } from './App';
 import { PropsPractice } from './PropsPractice';
 import { PropsPractice2 } from './PropsPractice2';
 import { ChildrenPractice } from './ChildrenPractice';
+import { UseStatePractice } from './UseStatePractice';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -29,5 +30,7 @@ root.render(
     <ChildrenPractice colorName='pink'>
       子供です(子の色が変わる)
     </ChildrenPractice>
+
+    <UseStatePractice />
   </>
 );
