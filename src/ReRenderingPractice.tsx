@@ -1,4 +1,4 @@
-import { useState, useCallback, memo } from 'react';
+import { useState, useCallback, memo, useMemo } from 'react';
 import {Child1} from './components/Child1';
 import {Child4} from './components/Child4';
 
@@ -26,14 +26,22 @@ export const ReRenderingPractice = memo(() => {
     setNum(0);
   }, []);
 
+  // useMemoを使用して高コストの計算結果をメモ化
+  // console.log('高コストの計算を実行');
+  // const isEven = num % 2 === 0;
+  const isEven = useMemo(() => {
+    console.log('高コストの計算を実行');
+    return num % 2 === 0;
+  }, [num]);
+
   console.log('再レンダリング');
 
 
   return (
     <>
       <h1>再レンダリング(コンソール確認)</h1>
-      <h2>memo, useCallback</h2>
-      <p>{num}</p>
+      <h2>memo, useCallback, useMemo</h2>
+      <p>{num} is {isEven ? 'Even' : 'Odd'}</p>
       <button onClick={onClickButton}>ボタンを押してコンソール確認</button>
       <Child1 onClickReset={onClickReset} />
       <Child4 />
