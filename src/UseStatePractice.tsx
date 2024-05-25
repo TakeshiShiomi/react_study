@@ -23,6 +23,14 @@ export const UseStatePractice: React.FC<UseStatePracticeProps> = () => {
     setText(e.target.value);
   };
 
+  // addTextという新しい状態変数を作成
+  const [addText, setAddText] = useState('');
+  // addボタンを押したときに実行される関数
+  // addボタンを押すと、textの現在の値がaddTextに設定される
+  const onAddButtonClick = () => {
+    setAddText(text);
+  };
+
   // 画面をリロードしているわけでもないのに数値が変わって表示されるのは、
   // コンポーネントの再レンダリングが行われているため
   // このコンポーネントが再レンダリングされるたびに(カウントアップする度や文字を入力する度に)、このコンソールログが表示される
@@ -35,7 +43,10 @@ export const UseStatePractice: React.FC<UseStatePracticeProps> = () => {
       <button onClick={onClickButton}>ボタンを押すと数が増える</button>
       <br />
       <input type="text" value={text} onChange={onChangeText} />
+      <br />
+      <button onClick={onAddButtonClick}>Add</button>
       <p>inputに入力するとテキストが表示される: {text}</p>
+      <p>addボタンを押すとinputに入力したテキストが表示される: {addText}</p>
     </>
   );
 };
