@@ -6,6 +6,7 @@
 - useState
 - 再レンダリング
 - useEffect
+- レンダリングの最適化(memo)
 
 # Getting Started with Create React App
 

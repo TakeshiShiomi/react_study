@@ -7,7 +7,7 @@ import { PropsPractice2 } from './PropsPractice2';
 import { ChildrenPractice } from './ChildrenPractice';
 import { UseStatePractice } from './UseStatePractice';
 import { UseEffectPractice } from './UseEffectPractice';
-
+import { ReRenderingPractice } from './ReRenderingPractice';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -35,5 +35,6 @@ root.render(
 
     <UseStatePractice />
     <UseEffectPractice />
+    <ReRenderingPractice />
   </>
 );
